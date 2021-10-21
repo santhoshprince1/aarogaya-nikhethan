@@ -1,0 +1,155 @@
+<div>
+<div class="row">
+  <div class="col-md-3 alert-success"></div>
+  <div class="col-md-6 alert-warning">
+    <h3 class="alert alert-primary d-flex justify-content-center">Find Hospital</h3>
+    <br>
+    <input type="text" class="form-control" placeholder="Enter the city" [(ngModel)]="city">
+    <hr>
+    <button type="button" class="btn btn-success mr-2 mb-3" (click)="getHospitals()">Search</button>
+    <button type="button" class="btn btn-success mb-3" [routerLink]="['']">LogOut</button>
+    <br>
+    <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#myMobi">
+      MyReservation
+    </button>
+    <br>
+    <ng-container *ngIf="hospitals && hospitals.length>0">
+      <table class="table alert alert-primary">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Hospital Name</th>
+            <th>Details</th>
+            <th>Faclites</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hospital of hospitals">
+            <td>{{hospital.id}}</td>
+            <td>{{hospital.hospitalname}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" (click)="getAddress(hospital.address)">
+                Address
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myMo" (click)="getFaclites(hospital.faclites)">
+                Facilites
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myMob" (click)="getHospitalId(hospital.id)">
+                Reservation
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </div>
+  <div class="col-md-3 alert-success"></div>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Address</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span><strong>Street:</strong>{{address.street}}</span>
+        <hr>
+        <span><strong>Area:</strong>{{address.area}}</span>
+        <hr>
+        <span><strong>City:</strong>{{address.city}}</span>
+        <hr>
+        <span><strong>Distrit:</strong>{{address.distrit}}</span>
+        <hr>
+        <span><strong>State:</strong>{{address.state}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myMo" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Facilites</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span><strong>Beds Available:</strong>{{facilites.beds}}</span>
+        <hr>
+        <span><strong>Ventilations:</strong>{{facilites.ventilation}}</span>
+        <hr>
+        <span><strong>Critical Care Unit:</strong>{{facilites.criticalCareUnit}}</span>
+        <hr>
+        <span><strong>Isolation Ward:</strong>{{facilites.isolationWard}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myMob" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Hospital Reservation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span>Would you like to get the Reservation in this Hospital?</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="getReservation()" data-dismiss="modal">Get Reservation</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myMobi" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">My Reservation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span><strong>OTP:</strong>{{" "+reservation.otp}}</span>
+        <hr>
+        <span><strong>Reservation Id:</strong>{{" "+reservation.id}}</span>
+        <hr>
+        <span><strong>Hospital Id:</strong>{{" "+reservation.hospitalId}}</span>
+        <hr>
+        <span><strong>User Id:</strong>{{" "+reservation.userId}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

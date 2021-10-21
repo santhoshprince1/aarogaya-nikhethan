@@ -1,0 +1,182 @@
+{
+  "Hospital": [
+    {
+      "hospitalname": "apollo hospital",
+      "password": "apollohospital123",
+      "address": {
+        "street": "rajan street",
+        "area": "sriram nagar",
+        "city": "Hyderabad",
+        "distrit": "Hyderabad",
+        "state": "Andhra Pradesh"
+      },
+      "faclites": {
+        "beds": 140,
+        "ventilation": 130,
+        "criticalCareUnit": 45,
+        "isolationWard": 40
+      },
+      "id": 1
+    },
+    {
+      "hospitalname": "Rajivi Gandhi Hospital",
+      "password": "rajivi123",
+      "address": {
+        "street": "valluyya street ",
+        "area": "samapath nagar",
+        "city": "Hyderabad",
+        "distrit": "Hyderabad",
+        "state": "Telangana"
+      },
+      "faclites": {
+        "beds": 149,
+        "ventilation": 139,
+        "criticalCareUnit": 45,
+        "isolationWard": 40
+      },
+      "id": 2
+    },
+    {
+      "hospitalname": "Aneesh Hospital",
+      "password": "aneesh123",
+      "address": {
+        "street": "Jaya Street",
+        "area": "Kumar Nagar",
+        "city": "Chennai",
+        "distrit": "Chennai",
+        "state": "Tamil Nadu"
+      },
+      "faclites": {
+        "beds": 140,
+        "ventilation": 100,
+        "criticalCareUnit": 45,
+        "isolationWard": 7
+      },
+      "id": 3
+    },
+    {
+      "hospitalname": "Santhosh's Hospital",
+      "password": "jdomso",
+      "address": {
+        "street": "Rajan Street ",
+        "area": "Rajesh nagar",
+        "city": "Vijayawada",
+        "distrit": "Krishna",
+        "state": "Andhra Pradesh"
+      },
+      "faclites": {
+        "beds": 150,
+        "ventilation": 140,
+        "criticalCareUnit": 45,
+        "isolationWard": 40
+      },
+      "id": 6
+    },
+    {
+      "hospitalname": "Kedar's Hospital",
+      "password": "kdndk",
+      "address": {
+        "street": "nadigam Street",
+        "area": "Syam Nagar",
+        "city": "Bangalore",
+        "distrit": "Bangalore",
+        "state": "Karanataka"
+      },
+      "faclites": {
+        "beds": 160,
+        "ventilation": 150,
+        "criticalCareUnit": 70,
+        "isolationWard": 60
+      },
+      "id": 7
+    }
+  ],
+  "user": [
+    {
+      "userName": "santhosh",
+      "password": "santhosh123*",
+      "userType": "user",
+      "id": 1
+    },
+    {
+      "userName": "prince",
+      "password": "prince123*",
+      "userType": "admin",
+      "id": 2
+    },
+    {
+      "userName": "devansh",
+      "password": "devansh1238",
+      "userType": "user",
+      "id": 3
+    },
+    {
+      "userName": "pavan mohan",
+      "password": "pavan123*",
+      "userType": "user",
+      "id": 4
+    }
+  ],
+  "reservation": [
+    {
+      "otp": 607599,
+      "userId": "1",
+      "hospitalId": 1,
+      "id": 1
+    },
+    {
+      "otp": 448475,
+      "userId": "1",
+      "hospitalId": 1,
+      "id": 2
+    },
+    {
+      "otp": 941764,
+      "userId": "1",
+      "hospitalId": 3,
+      "id": 3
+    },
+    {
+      "otp": 393361,
+      "userId": "1",
+      "hospitalId": 1,
+      "id": 4
+    },
+    {
+      "otp": 152996,
+      "userId": "1",
+      "hospitalId": 1,
+      "id": 5
+    },
+    {
+      "otp": 178689,
+      "userId": "1",
+      "hospitalId": 2,
+      "id": 6
+    },
+    {
+      "otp": 557287,
+      "userId": "4",
+      "hospitalId": 7,
+      "id": 7
+    },
+    {
+      "otp": 250249,
+      "userId": "3",
+      "hospitalId": 7,
+      "id": 8
+    },
+    {
+      "otp": 350440,
+      "userId": "3",
+      "hospitalId": 7,
+      "id": 9
+    },
+    {
+      "otp": 381472,
+      "userId": "1",
+      "hospitalId": 7,
+      "id": 10
+    }
+  ]
+}

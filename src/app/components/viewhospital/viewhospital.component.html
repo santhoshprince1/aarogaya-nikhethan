@@ -1,0 +1,151 @@
+<div>
+    <div class="row">
+      <div class="col-0 col-md-3 alert-success"></div>
+      <div class="col-12 col-md-6">
+          <h3 class="alert alert-primary">Hospital Details</h3>
+          <div *ngIf="message==='Updated Successfully'" class="alert alert-success">{{message}}</div>
+          <form action="">
+            <input type="text" class="form-control mb-1" placeholder="Hospital Name"[(ngModel)]="hospital.hospitalname" [ngModelOptions]="{standalone: true}" 
+             pattern="^[A-Za-z ]{7,}$" required #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors?.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors?.pattern">
+    It Should take only characters and aleast 7 characters
+  </div>
+</div>
+            <input type="password" placeholder="set password" class="form-control" [(ngModel)]="hospital.password" [ngModelOptions]="{standalone: true}"
+            pattern="^[A-Za-z0-9*&^%$#@!]{7,}$" required #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="password.errors?.required">
+    password is required.
+  </div>
+  <div *ngIf="password.errors?.pattern">
+    password must be at least 7 characters long and use all characters in your keyboard 
+  </div>
+</div>
+            <hr>
+            <label for="Address">Address</label>
+            <input type="text" class="form-control mb-1" placeholder="Street" [(ngModel)]="hospital.address.street"[ngModelOptions]="{standalone: true}" 
+            pattern="^[a-zA-Z ]{7,}$" required #street="ngModel">
+            <div *ngIf="street.invalid && (street.dirty || street.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="street.errors?.required">
+    street is required.
+  </div>
+  <div *ngIf="street.errors?.pattern">
+    street must be at least 7 characters long and only characters.
+  </div>
+</div>
+            <input type="text" class="form-control mb-1" placeholder="Area" [(ngModel)]="hospital.address.area" [ngModelOptions]="{standalone: true}" 
+            pattern="^[a-zA-Z ]{7,}$" required #area="ngModel">
+            <div *ngIf="area.invalid && (area.dirty || area.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="area.errors?.required">
+    area is required.
+  </div>
+  <div *ngIf="area.errors?.pattern">
+    area must be at least 7 characters long and characters only.
+  </div>
+</div>
+            <input type="text" class="form-control mb-1" placeholder="City" [(ngModel)]="hospital.address.city" [ngModelOptions]="{standalone: true}"
+            pattern="^[a-zA-Z ]{4,}$" required #city="ngModel">
+            <div *ngIf="city.invalid && (city.dirty || city.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="city.errors?.required">
+    street is required.
+  </div>
+  <div *ngIf="city.errors?.pattern">
+    street must be at least 4 characters long and characters only.
+  </div>
+</div>
+            <input type="text" class="form-control mb-1" placeholder="District" [(ngModel)]="hospital.address.distrit" [ngModelOptions]="{standalone: true}"
+            pattern="^[a-zA-Z ]{5,}$" required #district="ngModel">
+            <div *ngIf="district.invalid && (district.dirty || district.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="district.errors?.required">
+    district is required.
+  </div>
+  <div *ngIf="district.errors?.pattern">
+    district must be at least 5 characters long and characters only.
+  </div>
+</div>
+            <input type="text" class="form-control" placeholder="state" [(ngModel)]="hospital.address.state" [ngModelOptions]="{standalone: true}"
+            pattern="^[a-zA-Z. ]{2,}$" required #state="ngModel">
+            <div *ngIf="district.invalid && (district.dirty || district.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="state.errors?.required">
+    state is required.
+  </div>
+  <div *ngIf="state.errors?.pattern">
+    state must be at least 2 characters long and characters and dot only.
+  </div>
+</div>
+            <hr>
+            <label for="hospital facliites">Hospital Facilites</label>
+            <input type="number" class="form-control mb-1" placeholder="Beds Available" min=1 [(ngModel)]="hospital.faclites.beds" [ngModelOptions]="{standalone: true}"
+            required #beds="ngModel">
+            <div *ngIf="beds.invalid && (beds.dirty || beds.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="beds.errors?.required">
+    beds is required.
+  </div>
+  <div *ngIf="beds.errors?.min">
+    beds must be atleast 1.
+  </div>
+</div>
+            <input type="number" class="form-control mb-1" placeholder="Ventilations" min=1 [(ngModel)]="hospital.faclites.ventilation" [ngModelOptions]="{standalone: true}"
+            required #ventilation="ngModel">
+            <div *ngIf="ventilation.invalid && (ventilation.dirty || ventilation.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="ventilation.errors?.required">
+    ventilation is required.
+  </div>
+  <div *ngIf="ventilation.errors?.min">
+    ventilation must be atleast 1.
+  </div>
+</div>
+            <input type="number" class="form-control mb-1" placeholder="Critical Care Unit" min=1 [(ngModel)]="hospital.faclites.criticalCareUnit" [ngModelOptions]="{standalone: true}"
+            required #criticalCareUnit="ngModel">
+            <div *ngIf="criticalCareUnit.invalid && (criticalCareUnit.dirty || criticalCareUnit.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="criticalCareUnit.errors?.required">
+    Critical Care Unit is required.
+  </div>
+  <div *ngIf="criticalCareUnit.errors?.min">
+    Critical Care Unit must be atleast 1.
+  </div>
+</div>
+            <input type="number" class="form-control mb-1" placeholder="Isolation Ward" min=1 [(ngModel)]="hospital.faclites.isolationWard" [ngModelOptions]="{standalone: true}"
+            required #isolationWard="ngModel">
+            <div *ngIf="isolationWard.invalid && (isolationWard.dirty || isolationWard.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="isolationWard.errors?.required">
+    Isolation Ward is required.
+  </div>
+  <div *ngIf="isolationWard.errors?.min">
+    Isolation Ward must be atleast 1.
+  </div>
+</div>
+            <input type="submit" value="Submit" class="form-control btn btn-success mb-2" (click)="updateHospital()">
+            <button type="button" class="btn btn-success form-control" [routerLink]="['']">LogOut</button>
+          </form>
+          
+      </div>
+      <div class="col-0 col-md-3 alert-success"></div>
+    </div>
+</div>

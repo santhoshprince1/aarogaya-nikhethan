@@ -1,0 +1,23 @@
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-6 col-md-3"></div>
+        <div class="col-3 col-md-6 alert-warning">
+            <br>  
+            <h3 class="alert alert-primary d-flex justify-content-center">Admin Login</h3>
+            <div *ngIf="message!==''" class="alert alert-danger">{{message}}</div>     
+            <form>
+                <input type="text" class="form-control mb-2" placeholder="Admin Name" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}">
+                <input type="password" class="form-control mb-2" placeholder="Admin Password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+                <div class="text-center">
+                    <button type="button" class="btn btn-success mr-2" (click)="goToCreateHospital()">LogIn</button>
+                    <button type="button" class="btn btn-success" [routerLink]="['']">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-6 col-md-3"></div>
+    </div>
+</div>
